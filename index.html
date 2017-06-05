@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FCC: JavaScript Calculator</title>
+	<link rel="stylesheet" type="text/css" href="sass/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Gruppo" rel="stylesheet"> 
+	<title></title>
+</head>
+<body>
+	<h1>FCC:JavaScript Calculator</h1>
+
+	<div id="calc-body">
+		<h3>CalculatorJS</h3>
+
+		<div class="screen">
+			<p id="screen-input">0</p>
+			<p id="inmemory"></p>
+			
+		</div>
+
+		<div id="all-buttons">
+			<div class="row">
+				<button class="smaller" type="submit" id="pi">&#960;</button>
+				<button class="smaller" type="submit" id="squared">x <sup>2</sup></button>
+				<button class="smaller" type="submit" id="sqrt">&#8730;</button>
+				<button class="smaller" type="submit" id="recip">1/x</button>
+			</div>
+
+			<div class="row">
+				<button class="normal red" type="submit" id="AC" >AC</button>
+				<button class="normal operation" type="submit" id="percentage">&#37;</button>
+				<button class="normal operation" type="submit" id="sign">+/-</button>
+				<button class="normal operation" type="submit" id="divide">&#247;</button>
+			</div>
+
+			<div class="row">
+				<button class="normal digit num" name="digit" type="submit" value="7">7</button>
+				<button class="normal digit num" name="digit" type="submit" value="8">8</button>
+				<button class="normal digit num" name="digit" type="submit" value="9">9</button>
+				<button class="normal operation" type="submit" id="times">&#215;</button>
+			</div>
+			
+			<div class="row">
+				<button class="normal digit num" name="digit" type="submit" value="4">4</button>
+				<button class="normal digit num" name="digit" type="submit" value="5">5</button>
+				<button class="normal digit num" name="digit" type="submit" value="6">6</button>
+				<button class="normal operation" type="submit" id="minus">-</button>
+			</div>
+			
+			<div class="row">
+				<button class="normal digit num" name="digit" type="submit" value="1">1</button>
+				<button class="normal digit num" name="digit" type="submit" value="2">2</button>
+				<button class="normal digit num" name="digit" type="submit" value="3">3</button>
+				<button class="normal operation" type="submit" id="plus">&#43;</button>
+			</div>
+
+			<div class="row">
+				<button class="normal digit num" name="digit" type="submit" value="0">0</button>
+				<button class="normal digit" type="submit" id="point">.</button>
+				<button class="normal digit" type="submit" id="del">&#9003;</button>
+				<button class="normal operation orange" type="submit" id="equals">=</button>
+			</div>
+		</div>
+		
+	</div>
+
+	<footer><p>made by <a href="http://mar-bi.github.io" target="_blank">mar-bi</a> &copy; 2017</p></footer>
+
+	<script type="text/javascript" src="js/jquery-3.2.0.js"></script>
+	<script type="text/javascript" src="js/calc.js"></script>
+</body>
+</html>

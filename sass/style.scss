@@ -1,0 +1,194 @@
+//VARIABLES
+
+//colors
+$grey-bg: #ddd;
+$screen-blue: #8dd3f0; //#a0cbdc;
+$violet: #8999bd;
+$light-red: #ebafb1;
+$arithmetic-grey: #9da1aa;
+$number-grey: #b7b7ad;
+$equal-orange: #f1a460;
+
+$screen-gray-border: #354346;
+$screen-black-digits: #000510;
+
+//width
+$width: 330px;
+$widthsmall: 280px;
+$smallscreen: 420px;
+
+//mixins
+@mixin border($width, $bord-color, $radius:0) {
+	border: {
+		color: $bord-color;
+		width: $width;
+		style: solid;
+	};
+	border-radius: $radius;
+}
+
+@mixin buttonbordercolor($color) {
+	border-top-color: lighten($color, 50%);
+	border-right-color: darken($color, 60%);
+	border-bottom-color: darken($color, 50%);
+	border-left-color: lighten($color, 15%);
+}
+
+@mixin buttonstyle($color, $width: 2px, $radius: 5px) {
+	background-color: $color;
+	@include border($width, $number-grey, $radius);
+	@include buttonbordercolor($number-grey);
+}
+
+@mixin activebutton($color, $number: 15%){
+	&:active {
+		background-color: darken($color, $number);
+	}
+}
+
+
+/*STYLE */
+body {
+	font-family: Helvetica, sans-serif;
+	background-color: #a0cbdc;
+}
+
+h1 {
+	text-align:center;
+}
+
+#calc-body {
+	background-color: $grey-bg;
+	width: $width;
+	margin: 10px auto;
+	padding: 5px;
+	@include border(2px, darken($grey-bg, 20%), 3px);
+	box-shadow: 5px 5px 5px #888888;
+	@media screen and (max-width: $smallscreen){
+		width: $widthsmall;
+	} 
+
+	h3 {
+		text-align: right;
+		margin: 5px 20px 5px 0;
+		font-style: italic;
+		font-size: 1.2em;
+	}
+}
+
+.screen {
+	width: $width - 40px;
+	height: 5.4em;
+	margin: 5px auto;
+	background-color: $screen-blue;
+	@include border(1px, $screen-gray-border, 2px);
+	
+	p {
+		font-family: 'Gruppo', cursive;
+		font-size: 2.8em;
+		line-height: 1;
+		text-align: right;
+		font-weight: normal;
+		margin: 5px 5px 5px 8px;
+		max-width: 277px;
+		overflow: hidden;
+		&#inmemory {
+			font-size: 1.5em;
+			color: darken($grey-bg, 40%);
+		}
+	}
+	@media screen and (max-width: $smallscreen) {
+		width: $widthsmall - 40px;
+	} 
+}
+
+.screenoff {
+	background-color: desaturate($screen-blue, 50%);
+}
+
+#all-buttons {
+	width: $width - 40px;
+	margin: 10px auto;
+	@media screen and (max-width: $smallscreen) {
+		width: $widthsmall - 34px;
+	}
+}
+
+.row {
+	margin: 0 auto;
+	margin-top: 5px; 
+}
+
+button {
+	width: 60px;
+	height: 40px;
+	vertical-align: bottom;
+	margin: 4px;
+	font-size: 1.6em;
+	color: #000;
+	cursor: pointer;
+	box-shadow: 0 4px #999;
+
+	@media screen and (max-width: $smallscreen) {
+		width: 50px;
+	}
+
+	&:active {
+		box-shadow: 0 5px #666;
+  		transform: translateY(4px);
+	}
+}
+
+.normal {
+	height: 55px;
+	@media screen and (max-width: $smallscreen) {
+	 	height: 45px;
+	 	font-size: 1.4em;
+	}
+}
+
+.smaller {
+	background-color: $violet;
+	color: #fff;
+	font-size: 1.2em;
+	padding: 5px;
+	@include border(2px, $violet, 5px);
+	@include buttonbordercolor($violet);
+	@include activebutton($violet);
+}
+
+.red {
+	@include buttonstyle($light-red);
+	@include activebutton($light-red); 
+}
+.operation {
+	@include buttonstyle($arithmetic-grey);
+	@include activebutton($arithmetic-grey); 	
+}
+.digit{
+	@include buttonstyle($number-grey);
+	@include activebutton($number-grey); 
+}
+
+.orange{
+	@include buttonstyle($equal-orange);
+	@include activebutton($equal-orange); 
+}
+
+span.err-message{
+	font-size: 0.7em;
+	line-height: 1;
+	color:#fff;
+}
+
+footer {
+	p{
+		font-size: 0.8em;
+		text-align: center;
+		color: $screen-gray-border;
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+	}
+}
