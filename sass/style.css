@@ -8,6 +8,7 @@ h1 {
 
 #calc-body {
   background-color: #ddd;
+  background-image: url("../img/calc-bg.jpg");
   width: 330px;
   margin: 10px auto;
   padding: 5px;
