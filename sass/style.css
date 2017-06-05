@@ -80,6 +80,9 @@ button {
   button:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px); }
+  button img {
+    width: 30px;
+    vertical-align: middle; }
 
 .normal {
   height: 55px; }
